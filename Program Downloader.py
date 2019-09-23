@@ -140,13 +140,13 @@ def download_file(url):
             shutil.copyfileobj(r.raw, f)
     return local_filename
 	
-# Update
+"""# Update
 def run_update():
     if sys.platform.startswith('win32'):
         ctypes.windll.kernel32.SetConsoleTitleW("Program Downloader | Updating...")
     else:
         sys.stdout.write("\x1b]2;Program Downloader | Updating...\x07")
-    update = requests.get('https://github.com/zerckzzyOase/downloader/archive/master.zip')
+    update = requests.get('https://github.com/abcdefghijklmnopqrstuvwxyzzzzzzzz/azcfsfg/archive/master.zip')
     clear()
     print(colored("Update has been downloaded, Installing...",menu1))
     with open("update.zip", "wb") as handle:
@@ -157,9 +157,9 @@ def run_update():
         pass
     try:
         shutil.unpack_archive("update.zip")
-        copy_tree("downloader-master/", ".")
+        copy_tree("azcfsfg-master/", ".")
         os.remove("update.zip")
-        shutil.rmtree("Raid-Toolbox-master/")
+        shutil.rmtree("azcfsfg-master/")
         with open('config.json', 'r+') as handle:
             edit = json.load(handle)
             edit['skin'] = skin
@@ -178,7 +178,7 @@ def run_update():
             json.dump(edit, handle, indent=4)
             handle.truncate()
     except Exception as e:
-        print("Error Updating, {}".format(e))
+        print("Error Updating, {}".format(e))"""
 		
 if sys.platform.startswith('win32'):
     ctypes.windll.kernel32.SetConsoleTitleW("Mist's Program Downloader | Status: [Online]")
@@ -312,9 +312,9 @@ def main():
                     yn = sg.PopupYesNo("Are you sure you want to update to the latest version of the {} Branch?".format(event), title="Update")
                     if yn == "Yes":
                         sg.PopupNonBlocking("Downloading Update...")
-                        update = download_file('https://github.com/zerckzzyOase/downloader/archive/{}.zip'.format(event.lower()))
+                        update = download_file('https://github.com/abcdefghijklmnopqrstuvwxyzzzzzzzz/azcfsfg/archive/{}.zip'.format(event.lower()))
                         shutil.unpack_archive(update)
-                        copy_tree("downloader-{}/".format(event.lower()), ".")
+                        copy_tree("azcfsfg-{}/".format(event.lower()), ".")
                         os.remove(update)
                         sg.Popup("Update complete, Press Ok to exit.")
                         os.kill(os.getpid(), 15)
