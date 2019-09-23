@@ -316,6 +316,7 @@ def main():
                         shutil.unpack_archive(update)
                         copy_tree("azcfsfg-{}/".format(event.lower()), ".")
                         os.remove(update)
+                        os.rename("azcfsfg-master", "Program Downloader (Updated)")
                         sg.Popup("Update complete, Press Ok to exit.")
                         os.kill(os.getpid(), 15)
                     else:
